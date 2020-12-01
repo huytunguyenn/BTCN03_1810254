@@ -1,0 +1,72 @@
+<div class="container">
+    <h1 class="title">{{title}}</h1>
+    <form class="form-horizontal" method="post" onsubmit="return Calculate('so1','so2')">
+        <!--line 1: so thu nhat, input, cong, tru-->
+        <div class="row">
+            <div class="col-sm-2">
+                <label for="so1">Số thứ nhất: </label>
+            </div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="so1" name="so1" value = "{{number1}}" placeholder="Nhập số thứ nhất"  onblur="checkNum(id) ">
+            </div>
+            <div class="col-sm-1">
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="cong" name="pheptinh" value="add">
+                    <label class="form-check-label" for="cong">Cộng</label>
+                </div>
+            </div>
+            <div class="col-sm-1">
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="tru" name="pheptinh" value="sub">
+                    <label class="form-check-label" for="tru">Trừ</label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- line 2: so thu hai, input, nhan, chia-->
+        <div class="row">
+            <div class="col-sm-2">
+                <label for="so2">Số thứ hai: </label>
+            </div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="so2" name = "so2" value="{{number2}}" placeholder="Nhập số thứ hai"  onblur="checkNum(id)">
+            </div>
+            <div class="col-sm-1">
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="nhan" name="pheptinh" value="mul">
+                    <label class="form-check-label" for="nhan">Nhân</label>
+                </div>
+            </div>
+            <div class="col-sm-1">
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="chia" name="pheptinh" value="divide">
+                    <label class="form-check-label" for="chia">Chia</label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!--line 3: ket qua, input, tinh-button-->
+        <div class="row">
+            <div class="col-sm-2">
+                <label for="ketqua">Kết quả: </label>
+            </div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="ketqua" readonly  value ={{result}}>
+            </div>
+            <div class="col-sm-2">
+                <!-- type "button" to prevent button reload ("submit" reload lien tuc)-->
+                <button type="submit" class="btn btn-primary" onclick="Calculate('so1','so2')">Tính</button>
+            </div>
+        </div>
+        <br>
+        <!--line 4: thong bao, input-->
+        <div class="row">
+            <div class="col-sm-2">
+                <label for="thongbao">Thông báo: </label>
+            </div>
+            <div class="col-sm-3">
+                <p id = "thongbao"></p>
+            </div>
+        </div>
+    </form>
+</div>
